@@ -652,8 +652,3 @@ h2{
   --tw-bg-opacity: 1;
   background-color: rgb(99 109 129 / var(--tw-bg-opacity));
 }
-.circle-nav{
-  display: flex;
-  justify-content: center;
-  gap: 0.625rem;
-}

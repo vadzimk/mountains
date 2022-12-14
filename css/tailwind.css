@@ -32,6 +32,3 @@
 .inactive {
     @apply bg-[#636d81]
 }
-.circle-nav {
-    @apply flex gap-2.5 justify-center
-}
