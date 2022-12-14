@@ -520,6 +520,9 @@ h2{
 .flex{
   display: flex;
 }
+.hidden{
+  display: none;
+}
 .h-\[906px\]{
   height: 906px;
 }
@@ -540,6 +543,18 @@ h2{
 }
 .gap-12{
   gap: 3rem;
+}
+.gap-3{
+  gap: 0.75rem;
+}
+.gap-1{
+  gap: 0.25rem;
+}
+.gap-2\.5{
+  gap: 0.625rem;
+}
+.gap-2{
+  gap: 0.5rem;
 }
 .bg-green-200{
   --tw-bg-opacity: 1;
@@ -595,6 +610,12 @@ h2{
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.opacity-50{
+  opacity: 0.5;
+}
+.opacity-100{
+  opacity: 1;
 }
 .backdrop-opacity-50{
   --tw-backdrop-opacity: opacity(0.5);

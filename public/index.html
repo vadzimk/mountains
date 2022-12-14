@@ -12,6 +12,7 @@
 
       window.addEventListener("load", (event) => {
         const headerBar = document.querySelector("header");
+        const headerLogoType = document.querySelector("#logotype");
         const targetSection = document.querySelector("#home");
 
         if ("IntersectionObserver" in window &&
@@ -23,16 +24,19 @@
             if (entries[0].boundingClientRect.y >= -300) {
               headerBar.classList.add("text-white")
               headerBar.classList.remove("bg-white/50")
+              headerLogoType.classList.add("hidden")
             } else
             if (entries[0].boundingClientRect.y < -300 && entries[0].boundingClientRect.y > -700 ) {
               headerBar.classList.remove("text-white")
               headerBar.classList.remove("bg-white/100")
               headerBar.classList.add("bg-white/50")
-
+              headerLogoType.classList.remove("hidden")
+              headerLogoType.classList.add("opacity-50")
             }
               else { // no intersection
               headerBar.classList.remove("bg-white/50")
               headerBar.classList.add("bg-white/100")
+              headerLogoType.classList.add("opacity-100")
             }
           }
           let options = {
@@ -52,8 +56,9 @@
 <body class="relative">
 <header class="fixed top-0 left-0 right-0 z-20 py-3.5 transition ">
     <div class="w-[960px] m-auto flex items-center justify-between ">
-        <a href="/">
-            <img src="/assets/Logo.png" alt="Home" class="pl-5"/>
+        <a href="/" class="pl-5 inline-block flex gap-2.5">
+            <img src="/assets/Logo.png" alt="Los Angeles Mountains" class=""/>
+            <img id="logotype" src="/assets/losangeles_mountains.png" alt="Home"/>
         </a>
         <nav class="flex justify-between">
             <ul class="flex gap-12 list-none">
