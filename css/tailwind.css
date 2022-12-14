@@ -20,5 +20,18 @@
     @apply text-[10rem] text-[#72819c] font-['Oswald'] font-bold leading-normal
 }
 .section-contents {
-    @apply w-[960px] m-auto
+    @apply w-[960px] mx-auto
+}
+
+.circle{
+    @apply h-[0.5rem] w-[0.5rem] bg-white rounded-full
+}
+.active{
+    @apply bg-white
+}
+.inactive {
+    @apply bg-[#636d81]
+}
+.circle-nav {
+    @apply flex gap-2.5 justify-center
 }

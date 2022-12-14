@@ -37,6 +37,7 @@
               headerBar.classList.remove("bg-white/50")
               headerBar.classList.add("bg-white/100")
               headerLogoType.classList.add("opacity-100")
+              headerLogoType.classList.remove("opacity-50")
             }
           }
           let options = {
@@ -50,6 +51,8 @@
 
 
       }, false);
+
+      const slides = document.getElementsByClassName("thumbnail")
 
     </script>
 </head>
@@ -76,7 +79,7 @@
     <section id="home"
              class="bg-[url('/assets/Image1.png')] bg-no-repeat bg-cover h-[906px] relative top-0 left-0 right-0 w-full">
     </section>
-    <section id="history" class="bg-[url('/assets/Peak.png')] bg-no-repeat bg-cover h-[906px]">
+    <section id="history" class="bg-[url('/assets/Peak.png')] bg-no-repeat bg-cover h-[906px] flex flex-col justify-between">
         <article class="section-contents">
             <div class="relative">
                 <div class="h2-prefix-txt inline-block">01.</div>
@@ -91,6 +94,22 @@
                     ut quam. Vivamus suscipit dignissim tortor nec congue. </p>
             </div>
         </article>
+        <!-- Carousel -->
+        <div class="bg-[#414f6b]/80 h-[12rem] flex flex-col justify-center gap-3">
+            <!-- Thumbnails -->
+            <div class="flex gap-2.5 section-contents justify-center">
+                <img src="/assets/group10.png" class="thumbnail"/>
+                <img src="/assets/group8.png" class="thumbnail"/>
+                <img src="/assets/group10.png" class="thumbnail"/>
+                <img src="/assets/group8.png" class="thumbnail"/>
+            </div>
+            <!-- Circle nav -->
+            <div class="circle-nav">
+                <div class="circle active"></div>
+                <div class="circle inactive"></div>
+                <div class="circle inactive"></div>
+            </div>
+        </div>
     </section>
     <section id="team" class="">
         <div>02.</div>
