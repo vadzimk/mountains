@@ -7,15 +7,18 @@
 @layer base {
     html {
         font-family: Lato, system-ui, sans-serif;
-        @apply text-[16px]
+        @apply text-[16px] text-[#414f6b]
     }
     h2{
-        @apply font-['Oswald'] font-bold leading-normal text-[2rem] text-[#414f6b]
+        @apply font-['Oswald'] font-bold leading-normal text-[2rem]
     }
 }
 .nav-link {
-    @apply text-white italic block border-b
+    @apply italic block border-b
 }
 .h2-prefix-txt {
     @apply text-[10rem] text-[#72819c] font-['Oswald'] font-bold leading-normal
+}
+.section-contents {
+    @apply w-[960px] m-auto
 }
