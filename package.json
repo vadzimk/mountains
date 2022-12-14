@@ -1,0 +1,20 @@
+{
+  "name": "mountains",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "postcss css/tailwind.css -o public/build/tailwind.css",
+    "watch": "postcss css/tailwind.css -o public/build/tailwind.css --watch",
+    "make_default_config_full": "tailwind init tailwind-rull.config.js --full",
+    "serve": "live-server public"
+  },
+  "author": "vadzim",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.8",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.8"
+  }
+}

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: Lato, system-ui, sans-serif;
+        @apply text-[16px]
+    }
+    h2{
+        @apply font-['Oswald'] font-bold leading-normal text-[2rem] text-[#414f6b]
+    }
+}
+.nav-link {
+    @apply text-white italic block border-b
+}
+.h2-prefix-txt {
+    @apply text-[10rem] text-[#72819c] font-['Oswald'] font-bold leading-normal
+}
