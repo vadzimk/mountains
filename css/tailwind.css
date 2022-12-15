@@ -17,7 +17,10 @@
     @apply italic block border-b
 }
 .h2-prefix-txt {
-    @apply text-[10rem] text-[#72819c] font-['Oswald'] font-bold leading-normal
+    @apply text-[10rem] text-[#72819c] font-['Oswald'] font-bold  inline-block
+}
+.h2-main-txt {
+    @apply uppercase inline-block relative bottom-[2.3rem] -left-[2.3rem]
 }
 .section-contents {
     @apply w-[960px] mx-auto
