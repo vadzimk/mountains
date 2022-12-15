@@ -53,9 +53,10 @@
         const GAP_WIDTH = 10
         const thumbnailsContainer = document.getElementById("thumbnails-container")
         const thumbnails = document.getElementById("thumbnails")
-        thumbnails.classList.add(`gap-[${GAP_WIDTH}px]`)
+        const gapClassname = `gap-[${GAP_WIDTH}px]`
+        thumbnails.classList.add(gapClassname)
         const slides = document.getElementsByClassName("thumbnail")
-        const widthAvailable = slides[0].clientWidth * NUM_VISIBLE_SLIDES + GAP_WIDTH * (NUM_VISIBLE_SLIDES-1);
+        const widthAvailable = slides[0].clientWidth * NUM_VISIBLE_SLIDES + GAP_WIDTH * (NUM_VISIBLE_SLIDES - 1);
         thumbnails.style.width = `${widthAvailable}px`
         let widthTotal = 0
         for (let slide of slides) {
@@ -63,7 +64,7 @@
           // console.log(width)
           widthTotal += width
         }
-        widthTotal = widthTotal + (slides.length-1)*GAP_WIDTH // except the last item
+        widthTotal = widthTotal + (slides.length - 1) * GAP_WIDTH // except the last item
         // console.log(widthTotal, widthAvailable) //TODO debug
         const numberOfWindows = Math.round(widthTotal / widthAvailable)
         const circleNav = document.getElementById("circle-nav")
@@ -93,7 +94,7 @@
           // console.log("childDistance+currentDistanceFromParent", currentDistanceFromParent, childDistance)
           const distance = currentDistanceFromParent + childDistance
           // console.log("translateX: distance", distance)
-          thumbnails.style.transform = `translateX(${-1*distance}px)`
+          thumbnails.style.transform = `translateX(${-1 * distance}px)`
           currentDistanceFromParent = distance
         }
 
@@ -177,8 +178,7 @@
                 </div>
             </div>
             <!-- Circle nav -->
-            <div id="circle-nav" class="flex gap-2.5 justify-center">
-            </div>
+            <div id="circle-nav" class="flex gap-2.5 justify-center"></div>
         </div>
     </section>
     <section id="team" class="">
