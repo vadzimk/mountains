@@ -19,8 +19,8 @@
           "IntersectionObserverEntry" in window &&
           "intersectionRatio" in window.IntersectionObserverEntry.prototype) {
           const handleIntersect = (entries) => {
-            console.log(entries)
-            console.log(entries[0].boundingClientRect.y)
+            // console.log(entries)
+            // console.log(entries[0].boundingClientRect.y)
             if (entries[0].boundingClientRect.y >= -300) {
               headerBar.classList.add("text-white")
               headerBar.classList.remove("bg-white/50")
@@ -49,20 +49,55 @@
 
 
         // slideshow
-        const widthAvailable = document.getElementById("thumbnails").clientWidth;
+        const NUM_VISIBLE_SLIDES = 4
+        const GAP_WIDTH = 10
+        const thumbnailsContainer = document.getElementById("thumbnails-container")
+        const thumbnails = document.getElementById("thumbnails")
+        thumbnails.classList.add(`gap-[${GAP_WIDTH}px]`)
         const slides = document.getElementsByClassName("thumbnail")
+        const widthAvailable = slides[0].clientWidth * NUM_VISIBLE_SLIDES + GAP_WIDTH * (NUM_VISIBLE_SLIDES-1);
+        thumbnails.style.width = `${widthAvailable}px`
         let widthTotal = 0
-        let gap = 10
         for (let slide of slides) {
-          let width = slide.clientWidth + gap
-          console.log(width)
+          let width = slide.clientWidth
+          // console.log(width)
           widthTotal += width
         }
-        widthTotal = widthTotal - gap // except the last item
+        widthTotal = widthTotal + (slides.length-1)*GAP_WIDTH // except the last item
+        // console.log(widthTotal, widthAvailable) //TODO debug
+        const numberOfWindows = Math.round(widthTotal / widthAvailable)
         const circleNav = document.getElementById("circle-nav")
-        const numberOfWindows = Math.ceil(widthTotal / widthAvailable)
-        console.log(widthTotal, widthAvailable)
-        console.log("numberOfWindows", numberOfWindows)
+        console.log("numberOfWindows", numberOfWindows) //TODO debug
+        let currentDistanceFromParent = 0
+
+        const circleCallback = (windowNumber) => {
+          // reset circles active to inactive
+          const circles = document.getElementsByClassName("circle")
+          let previousActive = null
+          for (let i = 0; i < circles.length; i++) {
+            if (circles[i].classList.contains("active")) {
+              previousActive = i
+              circles[i].classList.remove("active")
+              circles[i].classList.add("inactive")
+            }
+            if (i === windowNumber) {
+              circles[i].classList.remove("inactive")
+              circles[i].classList.add("active")
+            }
+          }
+          // console.log("windowNumber", windowNumber)
+          const slide = slides[windowNumber * NUM_VISIBLE_SLIDES]
+          const parentLeft = thumbnailsContainer.getBoundingClientRect().left
+          const childLeft = slide.getBoundingClientRect().left
+          const childDistance = childLeft - parentLeft
+          // console.log("childDistance+currentDistanceFromParent", currentDistanceFromParent, childDistance)
+          const distance = currentDistanceFromParent + childDistance
+          // console.log("translateX: distance", distance)
+          thumbnails.style.transform = `translateX(${-1*distance}px)`
+          currentDistanceFromParent = distance
+        }
+
+        // add event listeners and active/inactive class
         for (let i = 0; i < numberOfWindows; i++) {
           const circle = document.createElement('div')
           circle.classList.add("circle")
@@ -71,6 +106,7 @@
           } else {
             circle.classList.add(("inactive"))
           }
+          circle.addEventListener('click', () => circleCallback(i))
           circleNav.appendChild(circle)
         }
 
@@ -121,11 +157,24 @@
         <!-- Carousel -->
         <div class="bg-[#414f6b]/80 h-[12rem] flex flex-col justify-center gap-3">
             <!-- Thumbnails -->
-            <div id="thumbnails" class="flex gap-2.5 section-contents justify-center">
-                <img src="/assets/group10.png" class="thumbnail"/>
-                <img src="/assets/group8.png" class="thumbnail"/>
-                <img src="/assets/group10.png" class="thumbnail"/>
-                <img src="/assets/group8.png" class="thumbnail"/>
+            <div id="thumbnails-container" class="mx-auto overflow-hidden relative">
+                <div id="thumbnails" class="flex relative ease-in duration-[300ms]">
+                    <img src="/assets/group10.png" class="thumbnail"/>
+                    <img src="/assets/group8.png" class="thumbnail"/>
+                    <img src="/assets/group10.png" class="thumbnail"/>
+                    <img src="/assets/group8.png" class="thumbnail"/>
+
+                    <img src="/assets/group10.png" class="thumbnail"/>
+                    <img src="/assets/group8.png" class="thumbnail"/>
+                    <img src="/assets/group10.png" class="thumbnail"/>
+                    <img src="/assets/group8.png" class="thumbnail"/>
+
+                    <img src="/assets/group10.png" class="thumbnail"/>
+                    <img src="/assets/group8.png" class="thumbnail"/>
+                    <img src="/assets/group10.png" class="thumbnail"/>
+                    <img src="/assets/group8.png" class="thumbnail"/>
+
+                </div>
             </div>
             <!-- Circle nav -->
             <div id="circle-nav" class="flex gap-2.5 justify-center">
