@@ -526,6 +526,9 @@ h3{
 .mt-\[2rem\]{
   margin-top: 2rem;
 }
+.block{
+  display: block;
+}
 .inline-block{
   display: inline-block;
 }
@@ -618,8 +621,8 @@ h3{
   --tw-bg-opacity: 1;
   background-color: rgb(65 79 107 / var(--tw-bg-opacity));
 }
-.bg-white\/40{
-  background-color: rgb(255 255 255 / 0.4);
+.bg-white\/80{
+  background-color: rgb(255 255 255 / 0.8);
 }
 .bg-\[url\(\'\/assets\/Image1\.png\'\)\]{
   background-image: url('/assets/Image1.png');
@@ -638,9 +641,6 @@ h3{
 }
 .bg-center{
   background-position: center;
-}
-.bg-bottom{
-  background-position: bottom;
 }
 .bg-no-repeat{
   background-repeat: no-repeat;
@@ -708,6 +708,13 @@ h3{
 .ease-in{
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
+.tab-button-txt{
+  display: block;
+  font-family: 'Oswald';
+  font-size: 1.67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 .nav-link{
   display: block;
   border-bottom-width: 1px;
@@ -769,6 +776,14 @@ h3{
   border-color: rgb(65 79 107 / var(--tw-border-opacity));
 }
 .image-tint{
+  background-color: rgba(202,215,241,0.5);
+  background-blend-mode: multiply;
+}
+.tab-contents{
+  height: 1102px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: rgba(202,215,241,0.5);
   background-blend-mode: multiply;
 }

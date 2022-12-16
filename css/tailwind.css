@@ -17,6 +17,9 @@
     }
 
 }
+.tab-button-txt{
+    @apply font-['Oswald'] font-bold text-[1.67rem] uppercase block
+}
 .nav-link {
     @apply italic block border-b
 }
@@ -48,4 +51,7 @@
 }
 .image-tint {
     @apply bg-[rgba(202,215,241,0.5)] bg-blend-multiply
+}
+.tab-contents{
+    @apply image-tint bg-no-repeat bg-cover bg-center h-[1102px]
 }

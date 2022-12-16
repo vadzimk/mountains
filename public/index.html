@@ -8,6 +8,22 @@
     <link href="/build/tailwind.css" rel="stylesheet">
     <title>Document</title>
     <script>
+
+      // Tabs
+      function openTab(self, tabId) {
+        const tabContents = document.getElementsByClassName('tab-contents')
+        const tabs = document.getElementsByClassName('tab')
+        const theTab = document.getElementById(tabId)
+        for (let i=0; i<tabs.length; i++) {
+          tabs[i].classList.remove('tab-active')
+        }
+        self.classList.add('tab-active')
+        for (let item of tabContents) {
+          item.style.display = "none"
+        }
+        theTab.style.display = 'block'
+      }
+
       // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 
       window.addEventListener("load", (event) => {
@@ -137,7 +153,7 @@
 </header>
 <main class="">
     <section id="home"
-             class="bg-[url('/assets/Image1.png')] bg-no-repeat bg-cover bg-center h-[906px] relative top-0 left-0 right-0 w-full">
+             class="bg-[url('/assets/Image1.png')] bg-no-repeat bg-cover h-[906px] relative top-0 left-0 right-0 w-full">
     </section>
     <section id="history"
              class="bg-[url('/assets/Peak.png')] image-tint bg-no-repeat bg-cover bg-center h-[1246px] flex flex-col justify-between">
@@ -199,23 +215,24 @@
         <article class="">
             <div class="bg-[#414f6b] text-[#b0b4be]">
                 <div class="section-contents flex flex-row">
-                    <div class="tab tab-active">
-                        <div>
-                            <h3>Mountain 1</h3>
-                        </div>
-                    </div>
-                    <div class="tab">
-                        <div>
-                            <h3>Mountain 2</h3>
-                        </div>
-                    </div>
+                    <button onclick="openTab(this, 'tab-1')"  class="tab tab-active">
+                        <span class="tab-button-txt">
+                            Mountain 1
+                        </span>
+                    </button>
+                    <button onclick="openTab(this, 'tab-2')"  class="tab">
+                        <span class="tab-button-txt">
+                            Mountain 2
+                        </span>
+                    </button>
                 </div>
             </div>
             <!-- Tab 1 (template) -->
             <!-- tint image -->
-            <div id="tab-1" class="bg-[url('/assets/photo-1.png')] image-tint bg-no-repeat bg-cover bg-center h-[1102px]">
+            <div id="tab-1"
+                 class="bg-[url('/assets/photo-1.png')] tab-contents">
                 <div class="section-contents py-[6.25rem]">
-                    <div class="ml-5 w-[22.19rem] bg-white/40 bg-blend-multiply">
+                    <div class="ml-5 w-[22.19rem] bg-white/80 bg-blend-multiply">
                         <div class="py-[1.5rem] px-[2.5rem]">
                             <h2 class="uppercase">Schedule</h2>
                             <ul class="flex flex-col list-none font-['Lato'] mt-[1rem]">
@@ -241,9 +258,10 @@
                 </div>
             </div>
             <!-- Tab 2 -->
-            <div id="tab-2" class="bg-[url('/assets/photo-2.png')] image-tint bg-no-repeat bg-cover bg-center h-[1102px]">
+            <div id="tab-2"
+                 class="bg-[url('/assets/photo-2.png')] image-tint bg-no-repeat bg-cover bg-center h-[1102px]">
                 <div class="section-contents py-[6.25rem]">
-                    <div class="ml-5 w-[22.19rem] bg-white/40 bg-blend-multiply">
+                    <div class="ml-5 w-[22.19rem] bg-white/80 bg-blend-multiply">
                         <div class="py-[1.5rem] px-[2.5rem]">
                             <h2 class="uppercase">Schedule</h2>
                             <ul class="flex flex-col list-none font-['Lato'] mt-[1rem]">
