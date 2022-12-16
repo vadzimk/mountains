@@ -15,6 +15,7 @@
     h3{
         @apply font-['Oswald'] font-bold text-[1.67rem]
     }
+
 }
 .nav-link {
     @apply italic block border-b
