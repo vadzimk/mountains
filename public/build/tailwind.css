@@ -614,12 +614,6 @@ h3{
 .overflow-hidden{
   overflow: hidden;
 }
-.border{
-  border-width: 1px;
-}
-.border-t{
-  border-top-width: 1px;
-}
 .border-b{
   border-bottom-width: 1px;
 }
@@ -843,14 +837,6 @@ h3{
 
   .sm\:h-\[1246px\]{
     height: 1246px;
-  }
-
-  .sm\:border-0{
-    border-width: 0px;
-  }
-
-  .sm\:border-t-0{
-    border-top-width: 0px;
   }
 
   .sm\:border-b-0{
