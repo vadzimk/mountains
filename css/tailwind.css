@@ -10,7 +10,10 @@
         @apply text-[16px] text-[#414f6b]
     }
     h2{
-        @apply font-['Oswald'] font-bold leading-normal text-[2rem]
+        @apply font-['Oswald'] font-bold text-[2rem]
+    }
+    h3{
+        @apply font-['Oswald'] font-bold text-[1.67rem]
     }
 }
 .nav-link {
@@ -34,4 +37,14 @@
 }
 .inactive {
     @apply bg-[#8b99b4]
+}
+
+.tab {
+    @apply py-[0.5rem] px-[1.38rem]
+}
+.tab-active {
+    @apply bg-[#b0b4be] text-[#414f6b] child:border-b child:border-[#414f6b]
+}
+.image-tint {
+    @apply bg-[rgba(202,215,241,0.5)] bg-blend-multiply
 }
