@@ -520,11 +520,11 @@ h3{
 .ml-5{
   margin-left: 1.25rem;
 }
-.mt-\[2rem\]{
-  margin-top: 2rem;
-}
 .mt-\[1rem\]{
   margin-top: 1rem;
+}
+.mt-\[2rem\]{
+  margin-top: 2rem;
 }
 .inline-block{
   display: inline-block;
@@ -549,9 +549,6 @@ h3{
 }
 .h-\[1102px\]{
   height: 1102px;
-}
-.h-3{
-  height: 0.75rem;
 }
 .w-full{
   width: 100%;
@@ -605,12 +602,6 @@ h3{
 .gap-\[10px\]{
   gap: 10px;
 }
-.gap-10{
-  gap: 2.5rem;
-}
-.gap-\[3\.44rem\]{
-  gap: 3.44rem;
-}
 .overflow-hidden{
   overflow: hidden;
 }
@@ -627,6 +618,9 @@ h3{
   --tw-bg-opacity: 1;
   background-color: rgb(65 79 107 / var(--tw-bg-opacity));
 }
+.bg-white\/40{
+  background-color: rgb(255 255 255 / 0.4);
+}
 .bg-\[url\(\'\/assets\/Image1\.png\'\)\]{
   background-image: url('/assets/Image1.png');
 }
@@ -636,17 +630,20 @@ h3{
 .bg-\[url\(\'\/assets\/photo-1\.png\'\)\]{
   background-image: url('/assets/photo-1.png');
 }
+.bg-\[url\(\'\/assets\/photo-2\.png\'\)\]{
+  background-image: url('/assets/photo-2.png');
+}
 .bg-cover{
   background-size: cover;
 }
 .bg-center{
   background-position: center;
 }
+.bg-bottom{
+  background-position: bottom;
+}
 .bg-no-repeat{
   background-repeat: no-repeat;
-}
-.p-\[1\.56rem\]{
-  padding: 1.56rem;
 }
 .py-3\.5{
   padding-top: 0.875rem;
@@ -664,23 +661,16 @@ h3{
   padding-top: 6.25rem;
   padding-bottom: 6.25rem;
 }
-.py-\[1\.56rem\]{
-  padding-top: 1.56rem;
-  padding-bottom: 1.56rem;
+.py-\[1\.5rem\]{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .px-\[2\.5rem\]{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
-.py-\[1\.5rem\]{
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
 .pl-5{
   padding-left: 1.25rem;
-}
-.pt-\[6\.25rem\]{
-  padding-top: 6.25rem;
 }
 .font-\[\'Lato\'\]{
   font-family: 'Lato';
@@ -765,6 +755,7 @@ h3{
   padding-bottom: 0.5rem;
   padding-left: 1.38rem;
   padding-right: 1.38rem;
+  text-transform: uppercase;
 }
 .tab-active{
   --tw-bg-opacity: 1;

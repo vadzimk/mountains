@@ -41,7 +41,7 @@
 }
 
 .tab {
-    @apply py-[0.5rem] px-[1.38rem]
+    @apply py-[0.5rem] px-[1.38rem] uppercase
 }
 .tab-active {
     @apply bg-[#b0b4be] text-[#414f6b] child:border-b child:border-[#414f6b]
