@@ -13,20 +13,24 @@
 <body class="relative">
 <header class="fixed top-0 left-0 right-0 z-20 py-3.5 transition ">
     <div class="section-contents flex items-center justify-between ">
-        <a href="/" class="pl-5 inline-block flex gap-2.5">
-            <img src="/assets/Logo.png" alt="Los Angeles Mountains" class=""/>
-            <img id="logotype" src="/assets/losangeles_mountains.png" alt="Home"/>
-        </a>
-        <nav class="flex justify-between">
-            <ul class="flex gap-12 list-none">
-                <li>
-                    <a href="#history" class="nav-link">01. HISTORY</a>
-                </li>
-                <li>
-                    <a href="#team" class="nav-link">02. TEAM</a>
-                </li>
-            </ul>
-        </nav>
+        <div class=" flex flex-row justify-between w-full">
+            <div class="">
+            <a href="/" class="flex gap-2.5 pl-5">
+                <img src="/assets/Logo.png" alt="Los Angeles Mountains" class=""/>
+                <img id="logotype" src="/assets/losangeles_mountains.png" alt="Home"/>
+            </a>
+            </div>
+            <nav class="flex items-center justify-end ">
+                <ul class="flex pr-5 flex-col sm:flex-row gap-4 sm:gap-12 list-none">
+                    <li>
+                        <a href="#history" class="nav-link">01. HISTORY</a>
+                    </li>
+                    <li>
+                        <a href="#team" class="nav-link">02. TEAM</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>
 <main class="">
@@ -43,7 +47,7 @@
                 </h2>
 
             </div>
-            <div class="px-[4.7rem] -mt-[2.5rem]">
+            <div class="px-[4.7rem] -mt-[2.5rem] py-4 sm:py-0 bg-white/80 sm:bg-transparent">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in ante viverra, rutrum erat rutrum,
                     consectetur mi. Proin at maximus est. Nullam purus ex, iaculis sed erat sed, blandit tincidunt quam.
                     Cras scelerisque id quam sed dignissim Pellentesque urna nunc, gravida quis hendrerit ac, tristique
@@ -77,14 +81,14 @@
         </div>
     </section>
     <section id="team" class="">
-        <article class="section-contents flex">
+        <article class="section-contents flex flex-col sm:flex-row">
             <div class="relative w-fit">
                 <div class="h2-prefix-txt">02.</div>
                 <h2 class="h2-main-txt">
                     Climb
                 </h2>
             </div>
-            <div class="max-w-[40rem] flex flex-col justify-center">
+            <div class="sm:max-w-[min(40rem,calc(100vw-306px))] px-[4.7rem] sm:px-0 -mt-[2.5rem] sm:mt-0 py-4 flex flex-col justify-center">
                 <p>Cras scelerisque id quam sed dignissim Pellentesque urna nunc, gravida quis hendrerit ac,
                     tristique
                     ut quam. Vivamus suscipit dignissim tortor nec congue. </p>
@@ -109,11 +113,11 @@
             <!-- Tab 1 (template) -->
             <!-- Mobile Tab Button -->
             <div class="bg-[#414f6b] text-[#b0b4be] sm:hidden border-b border-[#8a9ab7] sm:border-b-0">
-                    <button onclick="openTab(this, 'tab-1')" class="tab w-full">
+                <button onclick="openTab(this, 'tab-1')" class="tab w-full">
                         <span class="tab-button-txt">
                             Mountain 1
                         </span>
-                    </button>
+                </button>
             </div>
             <div id="tab-1"
                  class="bg-[url('/assets/photo-1.png')] tab-contents hidden sm:block">
