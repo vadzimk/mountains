@@ -14,7 +14,7 @@
         const tabContents = document.getElementsByClassName('tab-contents')
         const tabs = document.getElementsByClassName('tab')
         const theTab = document.getElementById(tabId)
-        for (let i=0; i<tabs.length; i++) {
+        for (let i = 0; i < tabs.length; i++) {
           tabs[i].classList.remove('tab-active')
         }
         self.classList.add('tab-active')
@@ -215,12 +215,12 @@
         <article class="">
             <div class="bg-[#414f6b] text-[#b0b4be]">
                 <div class="section-contents flex flex-row">
-                    <button onclick="openTab(this, 'tab-1')"  class="tab tab-active">
+                    <button onclick="openTab(this, 'tab-1')" class="tab tab-active">
                         <span class="tab-button-txt">
                             Mountain 1
                         </span>
                     </button>
-                    <button onclick="openTab(this, 'tab-2')"  class="tab">
+                    <button onclick="openTab(this, 'tab-2')" class="tab">
                         <span class="tab-button-txt">
                             Mountain 2
                         </span>
@@ -288,6 +288,16 @@
             </div>
         </article>
     </section>
+    <footer class="py-[2rem] bg-[#414f6b]">
+        <div class="section-contents flex items-center justify-between ">
+                <a href="/" class="pl-5 inline-block flex gap-2.5">
+                    <img src="/assets/Logo-bottom.png" alt="Los Angeles Mountains" class=""/>
+                </a>
+            <div class="font-['Lato'] italic font-black text-[#8a9ab7] uppercase ">
+                COPYRIGHT 2016. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
 </main>
 </body>
 </html>
