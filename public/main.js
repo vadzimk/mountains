@@ -1,12 +1,13 @@
 /* Tabs */
 const SM_BREAKPOINT = 640
 
+
 function openTab(self, tabId) {
   const theTab = document.getElementById(tabId)
-  console.log("window.innerWidth", window.innerWidth)
-  console.log("self.classList.contains('tab-active')", self.classList.contains('tab-active'))
+  // console.log("window.innerWidth", window.innerWidth)
+  // console.log("self.classList.contains('tab-active')", self.classList.contains('tab-active'))
   if (window.innerWidth < SM_BREAKPOINT && self.classList.contains('tab-active')) {
-    console.log("inner task")
+    // console.log("inner task")
     self.classList.remove('tab-active')
     theTab.style.display = 'none'
     return  // collapse active tab when clicked 2nd time
@@ -21,24 +22,60 @@ function openTab(self, tabId) {
     item.style.display = "none"
   }
   theTab.style.display = 'block'
+
+}
+
+const getActiveDesktopButtonNumber = () => {
+  const desktopButtons = document.getElementById('desktop-buttons').children
+  for (let i = 0; i < desktopButtons.length; i++) {
+    if (desktopButtons[i].classList.contains('tab-active')) {
+      return i
+    }
+  }
+  return undefined
+}
+const getActiveTabContentsNumber = () => {
+  const tabs = document.getElementsByClassName('tab-contents')
+  for (let i = 0; i < tabs.length; i++) {
+    if (tabs[i].style.display !== 'none') {
+      return i
+    }
+  }
+  return undefined
+}
+const setActiveDesktopButtonNumber = (num) => {
+  const desktopButtons = document.getElementById('desktop-buttons').children
+  desktopButtons[num].classList.add('tab-active')
+  console.log('set active tab', num)
 }
 
 // Reset first tab visibility on breakpoint sm
 window.addEventListener("resize", () => {
-
   if (window.innerWidth > SM_BREAKPOINT) {
-    const desktopButtons = document.getElementById('desktop-buttons').children
-    let allInactive = true
-    for (let i = 0; i < desktopButtons.length; i++) {
-      if (desktopButtons[i].classList.contains('tab-active')) {
-        allInactive = false
-        break
-      }
-    }
-    if (allInactive) {
-      const firstTab = document.getElementById('tab-1')
-      desktopButtons[0]?.classList.add("tab-active")
-      firstTab.style.display = 'block'
+    const activeTabContentsNumber = getActiveTabContentsNumber()
+    const activeDesktopButtonNumber = getActiveDesktopButtonNumber()
+    if (activeTabContentsNumber !== undefined && activeDesktopButtonNumber !== undefined
+      && activeDesktopButtonNumber !== activeTabContentsNumber) {
+      // console.log('case1')
+      setActiveDesktopButtonNumber(activeTabContentsNumber)
+    } else if (activeTabContentsNumber !== undefined && activeDesktopButtonNumber !== undefined
+      && activeDesktopButtonNumber === activeTabContentsNumber)
+    {
+      // console.log('case2')
+    } else if (activeTabContentsNumber === undefined && activeDesktopButtonNumber !== undefined) {
+      // console.log('case3')
+      setActiveDesktopButtonNumber(activeTabContentsNumber)
+    } else if (activeTabContentsNumber !== undefined && activeDesktopButtonNumber === undefined) {
+      // console.log('case4')
+      setActiveDesktopButtonNumber(activeTabContentsNumber)
+    } else {
+      // console.log('case5')
+      // console.log("activeTabContentsNumber", activeTabContentsNumber)
+      // console.log("activeDesktopButtonNumber", activeDesktopButtonNumber)
+      const tabsContents = document.getElementsByClassName('tab-contents')
+      // console.log(tabsContents)
+      setActiveDesktopButtonNumber(0)
+      tabsContents[0].style.display = 'block'
     }
   }
 })
