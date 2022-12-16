@@ -492,6 +492,9 @@ h3{
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.collapse{
+  visibility: collapse;
+}
 .fixed{
   position: fixed;
 }
@@ -560,17 +563,11 @@ h3{
 .w-\[22\.19rem\]{
   width: 22.19rem;
 }
-.max-w-\[calc\(100vw\)\]{
-  max-width: calc(100vw);
+.max-w-\[min\(calc\(100vw\)\2c 910px\)\]{
+  max-width: min(calc(100vw),910px);
 }
 .max-w-\[40rem\]{
   max-width: 40rem;
-}
-.max-w-\[min\(calc\(100vw\)\)\]{
-  max-width: min(calc(100vw));
-}
-.max-w-\[min\(calc\(100vw\)\2c 910px\)\]{
-  max-width: min(calc(100vw),910px);
 }
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -617,11 +614,18 @@ h3{
 .overflow-hidden{
   overflow: hidden;
 }
-.bg-white\/50{
-  background-color: rgb(255 255 255 / 0.5);
+.border{
+  border-width: 1px;
 }
-.bg-white\/100{
-  background-color: rgb(255 255 255 / 1);
+.border-t{
+  border-top-width: 1px;
+}
+.border-b{
+  border-bottom-width: 1px;
+}
+.border-\[\#8a9ab7\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(138 154 183 / var(--tw-border-opacity));
 }
 .bg-\[\#414f6b\]\/80{
   background-color: rgb(65 79 107 / 0.8);
@@ -632,6 +636,12 @@ h3{
 }
 .bg-white\/80{
   background-color: rgb(255 255 255 / 0.8);
+}
+.bg-white\/50{
+  background-color: rgb(255 255 255 / 0.5);
+}
+.bg-white\/100{
+  background-color: rgb(255 255 255 / 1);
 }
 .bg-\[url\(\'\/assets\/Image1\.png\'\)\]{
   background-image: url('/assets/Image1.png');
@@ -700,10 +710,6 @@ h3{
 .italic{
   font-style: italic;
 }
-.text-white{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
 .text-\[\#b0b4be\]{
   --tw-text-opacity: 1;
   color: rgb(176 180 190 / var(--tw-text-opacity));
@@ -711,6 +717,10 @@ h3{
 .text-\[\#8a9ab7\]{
   --tw-text-opacity: 1;
   color: rgb(138 154 183 / var(--tw-text-opacity));
+}
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .opacity-50{
   opacity: 0.5;
@@ -735,7 +745,7 @@ h3{
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 .tab-button-txt{
-  display: block;
+  display: inline-block;
   font-family: 'Oswald';
   font-size: 1.67rem;
   font-weight: 700;
@@ -819,11 +829,31 @@ h3{
     height: 1102px;
   }
 
+  .sm\:block{
+    display: block;
+  }
+
+  .sm\:hidden{
+    display: none;
+  }
+
   .sm\:h-\[906px\]{
     height: 906px;
   }
 
   .sm\:h-\[1246px\]{
     height: 1246px;
+  }
+
+  .sm\:border-0{
+    border-width: 0px;
+  }
+
+  .sm\:border-t-0{
+    border-top-width: 0px;
+  }
+
+  .sm\:border-b-0{
+    border-bottom-width: 0px;
   }
 }

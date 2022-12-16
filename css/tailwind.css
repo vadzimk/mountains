@@ -18,7 +18,7 @@
 
 }
 .tab-button-txt{
-    @apply font-['Oswald'] font-bold text-[1.67rem] uppercase block
+    @apply font-['Oswald'] font-bold text-[1.67rem] uppercase inline-block
 }
 .nav-link {
     @apply italic block border-b

@@ -1,8 +1,18 @@
 /* Tabs */
+const SM_BREAKPOINT = 640
+
 function openTab(self, tabId) {
+  const theTab = document.getElementById(tabId)
+  console.log("window.innerWidth", window.innerWidth)
+  console.log("self.classList.contains('tab-active')", self.classList.contains('tab-active'))
+  if (window.innerWidth < SM_BREAKPOINT && self.classList.contains('tab-active')) {
+    console.log("inner task")
+    self.classList.remove('tab-active')
+    theTab.style.display = 'none'
+    return  // collapse active tab when clicked 2nd time
+  }
   const tabContents = document.getElementsByClassName('tab-contents')
   const tabs = document.getElementsByClassName('tab')
-  const theTab = document.getElementById(tabId)
   for (let i = 0; i < tabs.length; i++) {
     tabs[i].classList.remove('tab-active')
   }
@@ -13,8 +23,26 @@ function openTab(self, tabId) {
   theTab.style.display = 'block'
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+// Reset first tab visibility on breakpoint sm
+window.addEventListener("resize", () => {
 
+  if (window.innerWidth > SM_BREAKPOINT) {
+    const desktopButtons = document.getElementById('desktop-buttons').children
+    let allInactive = true
+    for (let i = 0; i < desktopButtons.length; i++) {
+      if (desktopButtons[i].classList.contains('tab-active')) {
+        allInactive = false
+        break
+      }
+    }
+    if (allInactive) {
+      const firstTab = document.getElementById('tab-1')
+      desktopButtons[0]?.classList.add("tab-active")
+      firstTab.style.display = 'block'
+    }
+  }
+})
+// https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 window.addEventListener("load", (event) => {
 
   /* Header */
@@ -60,7 +88,6 @@ window.addEventListener("load", (event) => {
     const observer = new IntersectionObserver(handleIntersect, options);
     observer.observe(targetSection);
   }
-
   setupHeader()
 
   /* Slideshow */
@@ -70,12 +97,12 @@ window.addEventListener("load", (event) => {
     const GAP_WIDTH = 10
     const MAX_WIDTH = 910
     const thumbnailsContainer = document.getElementById("thumbnails-container")
-    console.log("window.innerWidth", window.innerWidth)
+    // console.log("window.innerWidth", window.innerWidth) // TODO debug
     thumbnailsContainer.style.width = Math.floor(Math.min(window.innerWidth, MAX_WIDTH) / slides[0].clientWidth) * slides[0].clientWidth + "px"
     const thumbnailsContainerWidth = thumbnailsContainer.getBoundingClientRect().width
-    console.log("thumbnailsContainerWidth", thumbnailsContainerWidth)
+    // console.log("thumbnailsContainerWidth", thumbnailsContainerWidth) // TODO debug
     const NUM_VISIBLE_SLIDES = Math.floor(thumbnailsContainerWidth / slides[0].clientWidth)
-    console.log("NUM_VISIBLE_SLIDES", NUM_VISIBLE_SLIDES)
+    // console.log("NUM_VISIBLE_SLIDES", NUM_VISIBLE_SLIDES) // TODO debug
 
     const thumbnails = document.getElementById("thumbnails")
     const gapClassname = `gap-[${GAP_WIDTH}px]`
@@ -90,10 +117,10 @@ window.addEventListener("load", (event) => {
       widthTotal += width
     }
     widthTotal = widthTotal + (slides.length - 1) * GAP_WIDTH // except the last item
-    console.log(widthTotal, widthAvailable) //TODO debug
+    // console.log(widthTotal, widthAvailable) //TODO debug
     const numberOfWindows = Math.round(widthTotal / widthAvailable)
     const circleNav = document.getElementById("circle-nav")
-    console.log("numberOfWindows", numberOfWindows) //TODO debug
+    // console.log("numberOfWindows", numberOfWindows) //TODO debug
     let currentDistanceFromParent = 0
 
     const circleCallback = (windowNumber) => {

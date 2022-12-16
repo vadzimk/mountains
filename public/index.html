@@ -91,8 +91,9 @@
             </div>
         </article>
         <article class="">
-            <div class="bg-[#414f6b] text-[#b0b4be]">
-                <div class="section-contents flex flex-row">
+            <!--  Desktop Tabs Buttons -->
+            <div class="bg-[#414f6b] text-[#b0b4be] hidden sm:block">
+                <div id="desktop-buttons" class="section-contents flex flex-row">
                     <button onclick="openTab(this, 'tab-1')" class="tab tab-active">
                         <span class="tab-button-txt">
                             Mountain 1
@@ -106,9 +107,16 @@
                 </div>
             </div>
             <!-- Tab 1 (template) -->
-            <!-- tint image -->
+            <!-- Mobile Tab Button -->
+            <div class="bg-[#414f6b] text-[#b0b4be] sm:hidden border-b border-[#8a9ab7] sm:border-b-0">
+                    <button onclick="openTab(this, 'tab-1')" class="tab w-full">
+                        <span class="tab-button-txt">
+                            Mountain 1
+                        </span>
+                    </button>
+            </div>
             <div id="tab-1"
-                 class="bg-[url('/assets/photo-1.png')] tab-contents">
+                 class="bg-[url('/assets/photo-1.png')] tab-contents hidden sm:block">
                 <div class="section-contents py-[6.25rem]">
                     <div class="ml-5 w-[22.19rem] bg-white/80 bg-blend-multiply">
                         <div class="py-[1.5rem] px-[2.5rem]">
@@ -136,6 +144,13 @@
                 </div>
             </div>
             <!-- Tab 2 -->
+            <div class="bg-[#414f6b] text-[#b0b4be] sm:hidden border-b border-[#8a9ab7] sm:border-b-0">
+                <button onclick="openTab(this, 'tab-2')" class="tab w-full">
+                        <span class="tab-button-txt">
+                            Mountain 2
+                        </span>
+                </button>
+            </div>
             <div id="tab-2"
                  class="bg-[url('/assets/photo-2.png')] tab-contents hidden">
                 <div class="section-contents py-[6.25rem]">
