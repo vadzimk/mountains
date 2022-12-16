@@ -541,17 +541,14 @@ h3{
 .hidden{
   display: none;
 }
-.h-\[906px\]{
-  height: 906px;
+.h-\[600px\]{
+  height: 600px;
 }
-.h-\[1246px\]{
-  height: 1246px;
+.h-\[900px\]{
+  height: 900px;
 }
 .h-\[12rem\]{
   height: 12rem;
-}
-.h-\[1102px\]{
-  height: 1102px;
 }
 .w-full{
   width: 100%;
@@ -563,11 +560,23 @@ h3{
 .w-\[22\.19rem\]{
   width: 22.19rem;
 }
+.max-w-\[calc\(100vw\)\]{
+  max-width: calc(100vw);
+}
 .max-w-\[40rem\]{
   max-width: 40rem;
 }
+.max-w-\[min\(calc\(100vw\)\)\]{
+  max-width: min(calc(100vw));
+}
+.max-w-\[min\(calc\(100vw\)\2c 910px\)\]{
+  max-width: min(calc(100vw),910px);
+}
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.resize{
+  resize: both;
 }
 .list-none{
   list-style-type: none;
@@ -624,12 +633,6 @@ h3{
 .bg-white\/80{
   background-color: rgb(255 255 255 / 0.8);
 }
-.bg-\[\#414f6b\]\/50{
-  background-color: rgb(65 79 107 / 0.5);
-}
-.bg-\[\#414f6b\]\/90{
-  background-color: rgb(65 79 107 / 0.9);
-}
 .bg-\[url\(\'\/assets\/Image1\.png\'\)\]{
   background-image: url('/assets/Image1.png');
 }
@@ -642,14 +645,11 @@ h3{
 .bg-\[url\(\'\/assets\/photo-2\.png\'\)\]{
   background-image: url('/assets/photo-2.png');
 }
-.bg-\[url\(\/assets\/Logo\.png\)\]{
-  background-image: url(/assets/Logo.png);
-}
-.bg-\[url\(\/assets\/LOSANGELES_MOUNTAINS2\.png\)\]{
-  background-image: url(/assets/LOSANGELES_MOUNTAINS2.png);
-}
 .bg-cover{
   background-size: cover;
+}
+.bg-top{
+  background-position: top;
 }
 .bg-center{
   background-position: center;
@@ -708,10 +708,6 @@ h3{
   --tw-text-opacity: 1;
   color: rgb(176 180 190 / var(--tw-text-opacity));
 }
-.text-\[\#63769d\]{
-  --tw-text-opacity: 1;
-  color: rgb(99 118 157 / var(--tw-text-opacity));
-}
 .text-\[\#8a9ab7\]{
   --tw-text-opacity: 1;
   color: rgb(138 154 183 / var(--tw-text-opacity));
@@ -724,18 +720,6 @@ h3{
 }
 .bg-blend-multiply{
   background-blend-mode: multiply;
-}
-.bg-blend-lighten{
-  background-blend-mode: lighten;
-}
-.bg-blend-color{
-  background-blend-mode: color;
-}
-.mix-blend-multiply{
-  mix-blend-mode: multiply;
-}
-.mix-blend-lighten{
-  mix-blend-mode: lighten;
 }
 .transition{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
@@ -822,10 +806,24 @@ h3{
   background-blend-mode: multiply;
 }
 .tab-contents{
-  height: 1102px;
+  height: 900px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(202,215,241,0.5);
   background-blend-mode: multiply;
+}
+@media (min-width: 640px){
+
+  .tab-contents{
+    height: 1102px;
+  }
+
+  .sm\:h-\[906px\]{
+    height: 906px;
+  }
+
+  .sm\:h-\[1246px\]{
+    height: 1246px;
+  }
 }

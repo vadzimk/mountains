@@ -53,5 +53,5 @@
     @apply bg-[rgba(202,215,241,0.5)] bg-blend-multiply
 }
 .tab-contents{
-    @apply image-tint bg-no-repeat bg-cover bg-center h-[1102px]
+    @apply image-tint bg-no-repeat bg-cover bg-center h-[900px] sm:h-[1102px]
 }
