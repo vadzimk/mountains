@@ -12,6 +12,7 @@ build_styles:
   stage: build
   image: node:16.13.0
   script:
+    - npm ci
     - npm run build
     - ls -htla public/build
   artifacts:
