@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2022, Vadzim Krechyk, All rights reserved.
+ * **/
+
 /* Tabs */
 const SM_BREAKPOINT = 640
 
