@@ -1,7 +1,7 @@
 # mountains
 
 ## Overview
-This is a skill test solution for landing page development from unnamed marketing agency.
+This is my solution to a skill test of landing page development from a marketing agency.
 
 Implemented using TailwindCSS, Vanilla JavaScript, HTML, deployed to OCI infrastructure.  
 All elements are responsive including the carousel and tabs/accordion.
