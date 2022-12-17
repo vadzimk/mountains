@@ -9,6 +9,14 @@ Navbar mobile implementation was not required.
 
 [Live demo](https://mountains.vadzimk.com)
 
+### Usage locally
+<pre><code>
+git clone https://github.com/vadzimk/mountains.git
+cd mountains
+npm install
+npm run build && npm run serve
+</code></pre>
+
 ### Requirements Specification:
 
 > “Convert the PSD to HTML that is provided below.  
