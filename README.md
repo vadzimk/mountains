@@ -12,6 +12,8 @@ Navbar mobile implementation was not required.
 ### Requirements Specification:
 
 > “Convert the PSD to HTML that is provided below.  
-Goal is to convert this into a single page response site. The carousel should be responsive. On mobile, the tabs should be converted to an accordion. History, team - these are internal links in the page to their respective sections.”
+Goal is to convert this into a single page response site. The carousel should be responsive. On mobile, the tabs should be converted to an accordion. History, team - these are internal links in the page to their respective sections.”  
+
+**Wireframe:**  
 
 ![Photoshop wireframe file](./CT_SkillTest_v3.png)
