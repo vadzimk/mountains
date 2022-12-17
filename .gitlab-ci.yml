@@ -1,0 +1,37 @@
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "master" && $CI_PIPELINE_SOURCE != "merge_request_event"
+      when: never
+    - when: always
+
+stages:
+  - build
+  - deploy
+
+build_styles:
+  stage: build
+  image: node:16.13.0
+  script:
+    - npm run build
+    - ls -htla public/build
+  artifacts:
+    paths:
+      - public/build
+    expire_in: 1 day
+
+
+deploy_public:
+  stage: deploy
+  variables:
+    PATH_STATIC: "/home/ubuntu/applications/share/nginx/html/mountains"
+  before_script:
+    - chmod 400 $WS_KEY
+    - ls -htla public/build
+  script:
+    - ssh -o StrictHostKeyChecking=no -i $WS_KEY ubuntu@$WS_HOST "if [ ! -d ${PATH_STATIC} ]; then mkdir -p ${PATH_STATIC}; fi; rm -rf ${PATH_STATIC}/*"
+    - scp -o StrictHostKeyChecking=no -i $WS_KEY -r public/* ubuntu@$WS_HOST:${PATH_STATIC}
+  environment:
+    name: development
+    url: https://mountains.vadzimk.com
+  resource_group: dev # fix The deployment job is older than the previously succeeded deployment job, and therefore cannot be run
+
